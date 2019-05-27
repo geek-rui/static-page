@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>这里是中国</title>
+    </head>
+    <body>
+        <div class="title"><h1>这里是中国</h1></div>
+        <!-- 设置地图容器 -->
+        <div id="map"></div>
+        <div class="content">
+          <h2 id="name"></h2>
+          <div id="article"></div>
+          <div id="video"></div>
+        </div>
+        <!-- <div>人民日报微信（ID：rmrbwx）</div> -->
+        <script type="text/javascript" src="https://raw.githack.com/MarkingCode/jsMap/master/dist/jsmap/jsMap.min.js"></script>
+        <script>
+
+            // 使用 jsMap 提供的 getJSON 方法获取 json 地图数据
+            // 当然，你也可以使用任何你喜欢的方式（如：jQuery / Axios / Fetch 等等）获取 json 地图数据
+            // 然后调用 jsMap.config() 方法设置地图
+            jsMap.getJSON( "https://raw.githack.com/MarkingCode/jsMap/master/dist/jsmap-json/china.json", function ( mapJSON ) {
+                jsMap.config("#map", mapJSON, {
+                    name: "china",
+                    areaName: {
+                      show: true
+                    },
+                    clickCallback: function ( id, name ) {
+                        // document.querySelector( "p" ).innerHTML = id + " --- " + name;
+                        var temp = data.filter(x=>x.name.includes(name))
+                        
+                        if(temp.length> 0) {
+                          document.querySelector( "#name" ).innerHTML = temp[0].name
+                          document.querySelector( "#article" ).innerHTML = `文章:<a href="${temp[0].article}" target="_blank">${temp[0].article}</a>`
+                          document.querySelector( "#video" ).innerHTML = `${name}一分钟:<a href="${temp[0].video}" target="_blank">${temp[0].video}</a>`
+                        }
+                    }
+                });
+            })
+          var data = [
+          {
+            name:'这里是黑龙江！',
+            article:'https://mp.weixin.qq.com/s/5bfiXHjxSgGa1VD1s_x9cw',
+            video:'https://mp.weixin.qq.com/s/3JnEJKr9UlgWGdstYsv3hg)'
+          },
+          {
+            name:'这里是吉林！',
+            article:'https://mp.weixin.qq.com/s/BcSYvj4ofPZIrRs852IYOw',
+            video:'https://mp.weixin.qq.com/s/Tba_AsVUDlh9pwqssugxLA'
+          },
+          {
+            name:'这里是辽宁！',
+            article:'https://mp.weixin.qq.com/s/nUGDk7YX4aZFgNjf-wJNDg',
+            video:'https://mp.weixin.qq.com/s/fDJWWLc5hNC7TUozqYNNRQ'
+          },
+          {
+            name:'这里是四川！',
+            article:'https://mp.weixin.qq.com/s/CvHZYi6YigP95HAoOqvGwQ',
+            video:'https://mp.weixin.qq.com/s/FXTuwDmPTndO_ispQmwFUA'
+          },
+          {
+            name:'这里是湖北！',
+            article:'https://mp.weixin.qq.com/s/eck0BgoUByj3JigF6sZSxw',
+            video:'https://mp.weixin.qq.com/s/QN5sp-6c_t5Voa9Na4hJUg'
+          },
+          {
+            name:'这里是西藏！འདི་ནི་བོད་ལྗོངས་ཡིན།！',
+            article:'https://mp.weixin.qq.com/s/iJ8kJGA385TEgYSlbJ1Wow',
+            video:'https://mp.weixin.qq.com/s/ZLJO429hi9A2nBjqKoSDXw'
+          },
+          {
+            name:'这里是云南！',
+            article:'https://mp.weixin.qq.com/s/3wRsNBe7yDQj44Y5Xhnb1w',
+            video:'https://mp.weixin.qq.com/s/fsGiEUvWlLG5hTuIXxu9Ew'
+          },
+          {
+            name:'这里是山东！',
+            article:'https://mp.weixin.qq.com/s/YidnoWAMvKjj_YhsOl5U1A',
+            video:'https://mp.weixin.qq.com/s/wcnz_v49I9Uu4ZcpOnTywQ'
+          },
+          {
+            name:'这里是河南！',
+            article:'https://mp.weixin.qq.com/s/VvFFr0HacXJ6HcFaLuEXMQ',
+            video:'https://mp.weixin.qq.com/s/W5CtrpAtlyMMZcdMaUx3yA'
+          },
+          {
+            name:'这里是陕西！',
+            article:'https://mp.weixin.qq.com/s/DpS535R6LQKao6GR3ln-EQ',
+            video:'https://mp.weixin.qq.com/s/u1j4nIDPZQxieKFGioxQUg'
+          },
+          {
+            name:'这里是江西！',
+            article:'https://mp.weixin.qq.com/s/tXc15VMirOW9seW-UPc0oA)',
+            video:'https://mp.weixin.qq.com/s/1H-WTJNrz_ydLgH3n_JatQ'
+          },
+          {
+            name:'这里是宁夏！',
+            article:'https://mp.weixin.qq.com/s/VnAsY52L59uUpsl69XNTeg',
+            video:'https://mp.weixin.qq.com/s/bH5Ip-7aAMscnjm6yJuROw'
+          },
+          {
+            name:'这里是贵州！',
+            article:'https://mp.weixin.qq.com/s/Ma7KBHG2c3T5vU6eFSlc7w',
+            video:'https://mp.weixin.qq.com/s/vEiAhSggFaqCxkYqCCRdFw'
+          },
+          {
+            name:'这里是重庆！',
+            article:'https://mp.weixin.qq.com/s/dhIHr8FkYqL8UhHLhZNY5w',
+            video:'https://mp.weixin.qq.com/s/ZGwvIBFhgW6P4fOAjb4z9g'
+          },
+          {
+            name:'这里是江苏',
+            article:'https://mp.weixin.qq.com/s/wUFxaRE7uhmuJZ4Yh2058A',
+            video:'https://mp.weixin.qq.com/s/MEJzCmkK7fcCu5wixwrDGA'
+          },
+          {
+            name:'这里是海南！',
+            article:'https://mp.weixin.qq.com/s/mLQHxrIu7BgNuu3OMrd6rQ',
+            video:'https://mp.weixin.qq.com/s/2SJvvkpC1S8U__WfpCS1nw'
+          },
+          {
+            name:'这里是浙江！',
+            article:'https://mp.weixin.qq.com/s/cjrrfZrr1Qu3fPTjn951yw',
+            video:'https://mp.weixin.qq.com/s/MJUU6VttxhrRo5WjZtYqJw'
+          },
+          {
+            name:'这里是内蒙古！',
+            article:'https://mp.weixin.qq.com/s/me9Iy2ocetPFJMPAKWc9zQ',
+            video:'https://mp.weixin.qq.com/s/mpCx-FnqJZP8hvBHbbCBpg'
+          },
+          {
+            name:'这里是河北！',
+            article:'https://mp.weixin.qq.com/s/kDOcu4z4NvKOEvFqngrkZg',
+            video:'https://mp.weixin.qq.com/s/CturocUYQtCf_Q_yOHM3eQ'
+          },
+          {
+            name:'这里是青海！',
+            article:'https://mp.weixin.qq.com/s/F47MBstAEONUIHdx6YKKkA',
+            video:'https://mp.weixin.qq.com/s/O2KMaluN7Xg1vRReL9TJFg'
+          },
+          {
+            name:'这里是广西！',
+            article:'https://mp.weixin.qq.com/s/9_yrOUTmpD68qlmpapiSYA',
+            video:'https://mp.weixin.qq.com/s/tIKUSN0h3h22OxPAXiI_hw'
+          },
+          {
+            name:'这里是新疆！',
+            article:'https://mp.weixin.qq.com/s/jIEkX9VmAJEf33UEZRRzcQ',
+            video:'https://mp.weixin.qq.com/s/gCFxale2551ETk9IegBhSQ'
+          },
+          {
+            name:'这里是广东！',
+            article:'https://mp.weixin.qq.com/s/APN5pI1nZ48Ef-NrRYbMAg',
+            video:'https://mp.weixin.qq.com/s/LNkXVUJFCNUICdXzbEIbfQ'
+          },
+          {
+            name:'这里是安徽！',
+            article:'https://mp.weixin.qq.com/s/tfLy_RVtUFPrV7Q8A7znHA',
+            video:'https://mp.weixin.qq.com/s/-uOAT-AQN1cGEmyBrh0BSg)'
+          },
+          {
+            name:'这里是山西！',
+            article:'https://mp.weixin.qq.com/s/HPKdluIniLqs3WdpZaV7kw',
+            video:'https://mp.weixin.qq.com/s/x6MyukTK0eDt_5CdLJhmcw'
+          },
+          {
+            name:'这里是福建！',
+            article:'https://mp.weixin.qq.com/s/jPldo00MCRCHB51wTwqxoQ',
+            video:'https://mp.weixin.qq.com/s/GOSjnUj3smQsXuunKPJ_ww'
+          },
+          {
+            name:'这里是甘肃！',
+            article:'https://mp.weixin.qq.com/s/zal6MZNoVafioXGnYY7OBw',
+            video:'https://mp.weixin.qq.com/s/rl5eg1Rds2FA2bGBX5ImSg'
+          },
+          {
+            name:'这里是湖南！',
+            article:'https://mp.weixin.qq.com/s/XuxjzwYB2c-JbZjNnKUEgQ',
+            video:'https://mp.weixin.qq.com/s/jyYWMAlcqChjiO2z8zUllQ'
+          },
+          {
+            name:'这里是天津！',
+            article:'https://mp.weixin.qq.com/s/rO6kvmYEXrYe80c4t5pKbg',
+            video:'https://mp.weixin.qq.com/s/aKW8ZaPpFi3MAleaJVkzFg'
+          },
+          {
+            name:'这里是上海！',
+            article:'https://mp.weixin.qq.com/s/S2vVb0e9zkqVaP6fosBV5g',
+            video:'https://mp.weixin.qq.com/s/7oMvbY4oEu1d0OTWW8VcmA'
+          },
+          {
+            name:'这里是北京！',
+            article:'https://mp.weixin.qq.com/s/anSeyioypfr8dIbXknKibg',
+            video:'https://mp.weixin.qq.com/s/5E4qHPkxld_acANwYctZNw'
+          }
+          ]    
+        </script>
+
+    <style>
+      #map{
+        margin-left: auto; 
+        margin-right: auto;
+      }
+      .title {
+        display: flex;
+        align-items: center;
+        justify-content: center; /* 水平居中 */
+      }
+      .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid gray;
+        border-radius: 10px;
+        /* background-color: yellow; */
+        margin-left: 30%; 
+        margin-right: 30%; 
+      }
+    </style>
+    </body>
+</html>
