@@ -14,13 +14,13 @@
           <div id="video"></div>
         </div>
         <!-- <div>人民日报微信（ID：rmrbwx）</div> -->
-        <script type="text/javascript" src="https://raw.githack.com/MarkingCode/jsMap/master/dist/jsmap/jsMap.min.js"></script>
+        <script type="text/javascript" src="https://raw.githack.com/geek-rui/static-page/master/china-map/dist/jsMap/jsMap-4.0.1.min.js"></script>
         <script>
 
             // 使用 jsMap 提供的 getJSON 方法获取 json 地图数据
             // 当然，你也可以使用任何你喜欢的方式（如：jQuery / Axios / Fetch 等等）获取 json 地图数据
             // 然后调用 jsMap.config() 方法设置地图
-            jsMap.getJSON( "https://raw.githack.com/MarkingCode/jsMap/master/dist/jsmap-json/china.json", function ( mapJSON ) {
+            jsMap.getJSON( "https://raw.githack.com/geek-rui/static-page/master/china-map/dist/jsMap-json/china.json", function ( mapJSON ) {
                 jsMap.config("#map", mapJSON, {
                     name: "china",
                     areaName: {
